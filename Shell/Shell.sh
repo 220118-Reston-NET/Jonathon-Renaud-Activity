@@ -10,7 +10,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "1. Add two numbers!"
 echo "2. Subtract two numbers!"
 echo "3. Multiply two numbers!"
-echo "4. Divide two numbers! --"
+echo "4. Divide two numbers! --(Dividing will result in a rounded down integer)"
 echo "5. Exit Calculator"
 read ans
 
@@ -50,7 +50,7 @@ do
 echo "Number cannot be zero, please enter a new number..."
 read num2
 done
-echo "$num1 / $num2 = $(($num1/$num2))" 
+echo "$num1 / $num2 = $(($num1/$num2)) --Keep in mind this has been rounded down" 
 echo "Press Enter to continue"
 read 
 elif [ "$ans" == "5" ]
