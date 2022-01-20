@@ -103,6 +103,7 @@ namespace MenuFunction
             switch (userInput2)
             {
                 case "1":
+                    data.View();
                     break;
                 case "2":
                     Console.WriteLine("What note would you like to add to your notes?");
@@ -110,8 +111,10 @@ namespace MenuFunction
                     data.Add(res);
                     break;
                 case "3":
+                    data.Delete();
                     break;
                 case "4":
+                    data.Search();
                     break;
                 case "5":
                     repeat2 = false;
