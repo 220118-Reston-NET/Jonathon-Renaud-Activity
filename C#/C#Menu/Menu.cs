@@ -106,6 +106,7 @@ namespace MenuFunction
                     data.View();
                     break;
                 case "2":
+                    Console.Clear();
                     Console.WriteLine("What note would you like to add to your notes?");
                     string res = Console.ReadLine();
                     data.Add(res);
