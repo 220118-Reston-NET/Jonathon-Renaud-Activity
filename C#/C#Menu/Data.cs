@@ -29,9 +29,9 @@ namespace DataCollection
             Console.ReadLine();
         }
 
-        public void Add(string hinasd){
+        public void Add(string str){
             
-            _notes.Add(hinasd);    
+            _notes.Add(str);    
             Console.WriteLine("Note has been added! Press enter to continue");            
             Console.ReadLine();
 
@@ -46,6 +46,10 @@ namespace DataCollection
                 prefix++;
             }
             int numInput = Convert.ToInt32(Console.ReadLine());
+            while (numInput > _notes.Count || numInput < 1) {
+                Console.WriteLine("Number is outside of range of the number of list items found. Please enter a new number.");
+                numInput = Convert.ToInt32(Console.ReadLine());
+            }
             int arrayConvert = numInput-1;
             _notes.RemoveAt(arrayConvert);
             Console.WriteLine("The note has been successfully deleted. Press enter to continue");
@@ -55,12 +59,16 @@ namespace DataCollection
         }
 
         public void Search(){
-            // Console.WriteLine("What number note would you like to look up?");
-            // int numSearch = Convert.ToInt32(Console.ReadLine());
-            // while (numSearch > _notes.Length || numSearch < 0) {
-            //     Console.WriteLine("Number is outside of range of the number of list items found. Please enter a new number.");
-            //     numSearch = Convert.ToInt32(Console.ReadLine());
-            // }
+            Console.WriteLine("What number note would you like to look up?");
+            int numSearch = Convert.ToInt32(Console.ReadLine());
+            while (numSearch > _notes.Count || numSearch < 1) {
+                Console.WriteLine("Number is outside of range of the number of list items found. Please enter a new number.");
+                numSearch = Convert.ToInt32(Console.ReadLine());
+            }
+            int arrayConvert = numSearch-1;
+            Console.WriteLine("Your note has been found and is below -- press enter to continue");
+            Console.WriteLine(_notes[arrayConvert]);
+            Console.ReadLine();
         }
     }    
 }
